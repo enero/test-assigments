@@ -1,17 +1,14 @@
-function deepCopyObject(obj) {
-	var result = [];
-
-	if (obj instanceof Array) {
-		result = obj.map(deepCopyObject);
-	} else if (obj instanceof Object) {
-		for (var key in obj) {
-			if (obj.hasOwnProperty(key)) {
-				result[key] = deepCopyObject(obj[key]);
-			}
+function deepCopyObject(val) {
+	if (Array.isArray(val)) {
+		return val.map(deepCopyObject);
+	} else if (typeof val === 'object' && val != null) {
+		var obj = {};
+		for (var key in val) {
+			obj[key] = deepCopyObject(val[key]);
 		}
-	} else {
-		return obj;
-	}
 
-	return result;
+		return obj;
+	} else {
+		return val;
+	}
 }
