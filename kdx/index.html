@@ -2,10 +2,11 @@
 <html>
 <head>
     <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <title>Captain Quack</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="./style.css" rel="stylesheet">
-    <link href="./form.css?c=1" rel="stylesheet">
+    <link href="./form.css?c=1003" rel="stylesheet">
     <link href="./table.css" rel="stylesheet">
 </head>
 <body>
@@ -22,14 +23,14 @@
     <form class="form">
         <input type="hidden" name="id" value="">
         <div class="form__row">
-            <div class="form__cell form__cell_4-col">
+            <div class="form__cell form__cell_4-col form__cell_12-col-mobile">
                 <input class="form__input" type="text" name="title" value="" placeholder="Название" required="required">
             </div>
-            <div class="form__cell form__cell_4-col">
+            <div class="form__cell form__cell_4-col form__cell_6-col-mobile form__cell_year form__cell_right-pad0">
                 <input class="form__input" type="number" name="year" min="1950" max="2017" value="" placeholder="Год"
                        required="required">
             </div>
-            <div class="form__cell form__cell_4-col">
+            <div class="form__cell form__cell_4-col form__cell_6-col-mobile form__cell_price form__cell_left-pad0">
                 <input class="form__input" type="number" name="price" min="100000" max="99999999" value=""
                        placeholder="Цена" required="required">
             </div>
@@ -41,7 +42,7 @@
             </div>
         </div>
         <div class="form__row">
-            <div class="form__cell form__cell_4-col">
+            <div class="form__cell form__cell_4-col form__cell_12-col-mobile">
                 <div class="color-set">
                     <div class="color-label">Цвет</div>
                     <input type="radio" id="color-white" class="form__radio-color form__radio-color_white" name="color"
@@ -65,14 +66,14 @@
                     <label for="color-green" class="form__label-color form__label-color_green"></label>
                 </div>
             </div>
-            <div class="form__cell form__cell_4-col">
+            <div class="form__cell form__cell_4-col form__cell_6-col-mobile form__cell_status form__cell_left-pad0">
                 <select class="form__select" name="status">
                     <option value="in_stock">В наличии</option>
                     <option value="pednding">Ожидается</option>
                     <option value="out_of_stock">Нет в наличии</option>
                 </select>
             </div>
-            <div class="form__cell form__cell_4-col">
+            <div class="form__cell form__cell_4-col form__cell_6-col-mobile form__cell_left-pad0">
                 <input class="form__submit" type="submit" value="Отправить">
             </div>
         </div>

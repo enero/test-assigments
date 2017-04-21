@@ -19,6 +19,7 @@
 }
 
 .table__row_header {
+    border-radius: 5px 5px 0 0;
     background-color: #C4092F;
     color: #FFFFFF;
     font-weight: bold;
@@ -46,7 +47,10 @@
 }
 
 .table-cell__description {
+    float: none;
     font-size: 10px;
+    clear: both;
+    padding: 0 10px 10px 10px;
 }
 
 .table__cell_year {
@@ -67,4 +71,28 @@
 
 .table__cell_action {
     width: 120px;
+}
+
+@media all and (max-width: 720px) {
+    .table-name,
+    .table__row_header {
+        display: none;
+    }
+
+    .table__cell {
+        width: 33.333333%;
+        box-sizing: border-box;
+    }
+
+    .table__cell_name {
+        margin-right: 0;
+    }
+
+    .table__cell_name div {
+        margin-right: 0;
+    }
+    
+    .table__cell_action {
+        float: right;
+    }
 }

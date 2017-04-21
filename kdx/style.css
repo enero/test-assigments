@@ -1,3 +1,8 @@
+html, body {
+  width: 100%;
+  min-width: 320px;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
 }
@@ -17,6 +22,7 @@ body {
   z-index: 1;
   height: 103px;
   background: url('./quack.png') center top no-repeat;
+  background-size: contain;
 }
 
 .page-title {

@@ -102,10 +102,11 @@ function htmlHeadRow() {
  */
 function htmlDataRow(data) {
   var row = document.createElement('div'),
+      div = document.createElement('div'),
       fields = [
         {
           class: 'table__cell table__cell_name',
-          html: '<div class="table-cell__title">' + data.title + '</div><div class="table-cell__description">' + data.description + '</div>'
+          html: '<div class="table-cell__title">' + data.title + '</div>'
         },
         {
           class: 'table__cell table__cell_year',
@@ -121,7 +122,7 @@ function htmlDataRow(data) {
         },
         {
           class: 'table__cell table__cell_price',
-          text: data.price
+          text: new Intl.NumberFormat('ru-RU').format(data.price) + ' руб.'
         },
         {
           class: 'table__cell table__cell_action',
@@ -134,6 +135,9 @@ function htmlDataRow(data) {
   fields.forEach(function(field) {
     row.appendChild(createCell(field));
   });
+  div.className = 'table-cell__description';
+  div.appendChild(document.createTextNode(data.description));
+  row.appendChild(div);
 
   return row;
 }
