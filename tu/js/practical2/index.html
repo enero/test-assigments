@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+</head>
+<body>
+
+<!-- Simple header with scrollable tabs. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title">Javascript-компонент для сортировки таблиц с данными</span>
+        </div>
+        <!-- Tabs -->
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+            <a href="#scroll-tab-1" class="mdl-layout__tab is-active">Маленький объем</a>
+            <a href="#scroll-tab-2" class="mdl-layout__tab">Большой объем</a>
+        </div>
+    </header>
+    <main class="mdl-layout__content">
+        <section class="mdl-layout__tab-panel is-active" id="scroll-tab-1">
+            <div class="page-content">
+                <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp data-table-component">
+                    <thead>
+                    <tr>
+                        <th class="mdl-data-table__cell--non-numeric">id</th>
+                        <th class="mdl-data-table__cell--non-numeric">firstName</th>
+                        <th class="mdl-data-table__cell--non-numeric">lastName</th>
+                        <th class="mdl-data-table__cell--non-numeric">email</th>
+                        <th class="mdl-data-table__cell--non-numeric">phone</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="mdl-layout__tab-panel" id="scroll-tab-2">
+            <div class="page-content"><!-- Your content goes here --></div>
+        </section>
+    </main>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var url1 = 'http://www.filltext.com/?rows=32&id=%7Bnumber%7C1000%7D&firstName=%7BfirstName%7D&lastName=%7BlastName%7D&email=%7Bemail%7D&phone=%7Bphone%7C(xxx)xxx-xx-xx%7D&adress=%7BaddressObject%7D&description=%7Blorem%7C32%7D';
+
+        var url2 = 'https://jsonplaceholder.typicode.com/posts';
+
+        fetch(url1)
+            .then(function(response) {
+                //alert(response.headers.get('Content-Type')); // application/json; charset=utf-8
+                //alert(response.status); // 200
+
+                return response.json();
+            })
+            .then(function(data) {
+                //console.log(data);
+
+
+// делаем вспомогательный DocumentFragment
+                var fragment = document.createDocumentFragment();
+
+                var html, tr;
+                for (var i = 0; i < data.length; i++) {
+                    console.log('data', data[i]);
+
+                    tr = document.createElement('tr');
+
+                    tr.innerHTML = [
+                        '<td class="mdl-data-table__cell--non-numeric">' + data[i].id + '</td>',
+                        '<td>' + data[i].firstName + '</td>',
+                        '<td>' + data[i].lastName + '</td>',
+                        '<td>' + data[i].email + '</td>',
+                        '<td>' + data[i].phone + '</td>'
+                    ].join("\n");
+
+                    fragment.appendChild(tr);
+                }
+
+                document.getElementsByClassName('data-table-component')[0].appendChild(fragment);
+            })
+            .catch( alert );
+    });
+</script>
+
+</body>
+</html>
