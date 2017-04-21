@@ -1,0 +1,70 @@
+.table-name {
+    margin-top: 155px;
+    padding-left: 14px;
+    border-left: 2px solid #8B9497;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.table {
+    margin-top: 25px;
+}
+
+.table__row {
+    width: 100%;
+    overflow: hidden;
+    background-color: #F5F6F6;
+    color: #797979;
+    border-bottom: 1px solid #e6e9ea;
+}
+
+.table__row_header {
+    background-color: #C4092F;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.table__cell {
+    float: left;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 10px;
+    font-size: 13px;
+}
+
+.table__cell_name {
+    width: 100%;
+    margin-right: -550px;
+}
+
+.table__cell_name div {
+    margin-right: 550px;
+}
+
+.table-cell__title {
+
+}
+
+.table-cell__description {
+    font-size: 10px;
+}
+
+.table__cell_year {
+    width: 90px;
+}
+
+.table__cell_color {
+    width: 100px;
+}
+
+.table__cell_status {
+    width: 120px;
+}
+
+.table__cell_price {
+    width: 120px;
+}
+
+.table__cell_action {
+    width: 120px;
+}

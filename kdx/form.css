@@ -1,0 +1,128 @@
+.form__row {
+    width: 100%;
+    overflow: hidden;
+}
+
+.form__cell {
+    float: left;
+    box-sizing: border-box;
+    padding: 15px 10px 15px 10px;
+    color: #A1A1A1;
+}
+
+.form__cell:first-of-type {
+    padding-left: 0;
+}
+
+.form__cell:last-of-type {
+    padding-right: 0;
+}
+
+.form__cell_4-col {
+    width: 33.333333%;
+}
+
+.form__cell_12-col {
+    width: 100%;
+}
+
+.form__input {
+    width: 100%;
+    height: 37px;
+    padding: 10px;
+    border: 1px solid #A1A1A1;
+    box-sizing: border-box;
+}
+
+.form__select {
+    width: 100%;
+    height: 37px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #B0B0B0;
+    background-color: white;
+    color: #A1A1A1;
+    outline: none;
+}
+
+.form__select:hover {
+    border-bottom: 2px solid #C4092F;
+    cursor: pointer;
+}
+
+.color-set {
+    position: relative;
+    height: 37px;
+}
+
+.color-label {
+    position: absolute;
+    top: -18px;
+    font-size: 13px;
+}
+
+.form__input:focus{
+    outline: none;
+}
+
+.form__input:hover {
+    border-bottom: 2px solid #C4092F;
+    cursor: pointer;
+}
+
+.form__radio-color {
+    display: none;
+}
+
+.form__label-color {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    width: 22px;
+    height: 22px;
+    margin: 4px 18px 0 0;
+    border-radius: 50%;
+    border: 4px solid white;
+}
+
+.form__label-color_white {
+    background-color: white;
+    box-shadow: inset 0 0 1px #A1A1A1;
+}
+
+.form__label-color_black {
+    background-color: black;
+}
+
+.form__label-color_grey {
+    background-color: grey;
+}
+
+.form__label-color_red {
+    background-color: red;
+}
+
+.form__label-color_green {
+    background-color: green;
+}
+
+.form__radio-color_white:checked ~ .form__label-color_white,
+.form__radio-color_black:checked ~ .form__label-color_black,
+.form__radio-color_grey:checked ~ .form__label-color_grey,
+.form__radio-color_red:checked ~ .form__label-color_red,
+.form__radio-color_green:checked ~ .form__label-color_green {
+    border: 4px solid #C4092F;
+}
+
+.form__submit {
+    width: 100%;
+    height: 37px;
+    border: 0;
+    box-sizing: border-box;
+    background-color: #C4092F;
+    color: #FFFFFF;
+}
+
+.form__submit:hover {
+    cursor: pointer;
+}

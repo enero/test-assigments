@@ -1,70 +1,93 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8" />
-  <title>Captain Quack</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <link href="./style.css" rel="stylesheet">
+    <meta charset="utf-8"/>
+    <title>Captain Quack</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
+    <link href="./form.css?c=1" rel="stylesheet">
+    <link href="./table.css" rel="stylesheet">
 </head>
 <body>
-  <header class="page-content">
-    <h1 class="page-title"><div class="inverted-text">!</div>Ay caramba!</h1>
-  </header>
-  <main class="page-content">
+
+<header class="page-header">
+    <div class="page-header__top">
+        <div class="page-header__logo"></div>
+    </div>
+    <div class="page-header__bottom">
+        <h1 class="page-title"><div class="inverted-text">!</div>Ay caramba!</h1>
+    </div>
+</header>
+<main class="page-content">
     <form class="form">
-      <input type="hidden" name="id" value="">
-      <div class="form__row">
-        <div class="cell cell__4">
-          <input class="form__input" type="text" name="title" value="" placeholder="Название" required="required">
+        <input type="hidden" name="id" value="">
+        <div class="form__row">
+            <div class="form__cell form__cell_4-col">
+                <input class="form__input" type="text" name="title" value="" placeholder="Название" required="required">
+            </div>
+            <div class="form__cell form__cell_4-col">
+                <input class="form__input" type="number" name="year" min="1950" max="2017" value="" placeholder="Год"
+                       required="required">
+            </div>
+            <div class="form__cell form__cell_4-col">
+                <input class="form__input" type="number" name="price" min="100000" max="99999999" value=""
+                       placeholder="Цена" required="required">
+            </div>
         </div>
-        <div class="cell cell__4">
-          <input class="form__input" type="number" name="year" min="1950" max="2017" value="" placeholder="Год" required="required">
+        <div class="form__row">
+            <div class="form__cell form__cell_12-col">
+                <input class="form__input" type="text" name="description" value="" placeholder="Описание"
+                       required="required">
+            </div>
         </div>
-        <div class="cell cell__4">
-          <input class="form__input" type="number" name="price" min="100000" max="99999999" value="" placeholder="Цена" required="required">
-        </div>
-      </div>
-      <div class="form__row">
-        <div class="cell cell__12">
-          <input class="form__input" type="text" name="description" value="" placeholder="Описание" required="required">
-        </div>
-      </div>
-      <div class="form__row">
-        <div class="cell cell__4">
-          <div>Цвет</div>
+        <div class="form__row">
+            <div class="form__cell form__cell_4-col">
+                <div class="color-set">
+                    <div class="color-label">Цвет</div>
+                    <input type="radio" id="color-white" class="form__radio-color form__radio-color_white" name="color"
+                           value="white" checked="checked"/>
+                    <label for="color-white" class="form__label-color form__label-color_white"></label>
 
-            <input type="radio" id="color-white" class="form__radio-color form__radio-color_white" name="color" value="white" checked="checked" />
-            <label for="color-white" class="form__label-color form__label-color_white"></label>
+                    <input type="radio" id="color-black" class="form__radio-color form__radio-color_black" name="color"
+                           value="black"/>
+                    <label for="color-black" class="form__label-color form__label-color_black"></label>
 
-            <input type="radio" id="color-black" class="form__radio-color form__radio-color_black" name="color" value="black" />
-            <label for="color-black" class="form__label-color form__label-color_black"></label>
+                    <input type="radio" id="color-grey" class="form__radio-color form__radio-color_grey" name="color"
+                           value="grey"/>
+                    <label for="color-grey" class="form__label-color form__label-color_grey"></label>
 
-            <input type="radio" id="color-grey" class="form__radio-color form__radio-color_grey" name="color" value="grey" />
-            <label for="color-grey" class="form__label-color form__label-color_grey"></label>
+                    <input type="radio" id="color-red" class="form__radio-color form__radio-color_red" name="color"
+                           value="red"/>
+                    <label for="color-red" class="form__label-color form__label-color_red"></label>
 
-            <input type="radio" id="color-red" class="form__radio-color form__radio-color_red" name="color" value="red" />
-            <label for="color-red" class="form__label-color form__label-color_red"></label>
-
-            <input type="radio" id="color-green" class="form__radio-color form__radio-color_green" name="color" value="green" />
-            <label for="color-green" class="form__label-color form__label-color_green"></label>
-
+                    <input type="radio" id="color-green" class="form__radio-color form__radio-color_green" name="color"
+                           value="green"/>
+                    <label for="color-green" class="form__label-color form__label-color_green"></label>
+                </div>
+            </div>
+            <div class="form__cell form__cell_4-col">
+                <select class="form__select" name="status">
+                    <option value="in_stock">В наличии</option>
+                    <option value="pednding">Ожидается</option>
+                    <option value="out_of_stock">Нет в наличии</option>
+                </select>
+            </div>
+            <div class="form__cell form__cell_4-col">
+                <input class="form__submit" type="submit" value="Отправить">
+            </div>
         </div>
-        <div class="cell cell__4">
-          <select class="form__select" name="status" placeholder="Статус">
-            <option value="in_stock">В наличии</option>
-            <option value="pednding">Ожидается</option>
-            <option value="out_of_stock">Нет в наличии</option>
-          </select>
-        </div>
-        <div class="cell cell__4">
-          <input class="form__submit" type="submit" value="Отправить">
-        </div>
-      </div>
     </form>
 
-    <div>Автомобили в наличии</div>
+    <div class="table-name">Автомобили в наличии</div>
     <div class="table"></div>
-  </main>
-  <script src="app.js"></script>
+</main>
+<footer class="page-footer page-footer_margin">
+    <div class="page-footer__copyright">
+        <div class="upper-text">© captain quack</div>
+        <div>Десница тысячелетия и молюск</div>
+    </div>
+</footer>
+
+<script src="app.js"></script>
 </body>
 </html>

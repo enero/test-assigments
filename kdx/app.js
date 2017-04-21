@@ -105,7 +105,7 @@ function htmlDataRow(data) {
       fields = [
         {
           class: 'table__cell table__cell_name',
-          html: '<div>' + data.title + '<br />' + data.description + '</div>'
+          html: '<div class="table-cell__title">' + data.title + '</div><div class="table-cell__description">' + data.description + '</div>'
         },
         {
           class: 'table__cell table__cell_year',
