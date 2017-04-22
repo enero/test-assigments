@@ -11,16 +11,19 @@
 function httpGet(url, renderFn) {
   var xhr = new XMLHttpRequest();
 
+  xhr.onreadystatechange = function() {
+    if (this.readyState === XMLHttpRequest.DONE) {
+      if (this.status !== 200) {
+          alert(this.status + ': ' + this.statusText);
+      } else if (typeof(renderFn) == 'function') {
+          renderFn(JSON.parse(this.responseText));
+      } else {
+          alert('Ошибка! Передана не функция');
+      }
+    }
+  };
   xhr.open('GET', url, false);
   xhr.send();
-
-  if (xhr.status != 200) {
-    alert(xhr.status + ': ' + xhr.statusText);
-  } else if (typeof(renderFn) == 'function' ) {
-    renderFn(JSON.parse(xhr.responseText));
-  } else {
-    alert('Ошибка!');
-  }
 }
 
 /**
