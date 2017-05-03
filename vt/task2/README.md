@@ -1,3 +1,5 @@
+Инструкция для запуска:
+
 1) composer require --dev phpunit/phpunit
 
 2) composer dump-autoload
